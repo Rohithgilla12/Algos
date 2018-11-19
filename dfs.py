@@ -26,6 +26,18 @@ class Graph:
     def DFS(self,s):
         visited=[False for _ in range(len(self.graph))]
         self.DFSRec(s,visited)
+    def DFS2(self,s):
+        visited=[False for _ in range(len(self.graph))]
+        queue=[]
+        queue.append(s)
+        visited[s]=True
+        while queue:
+            s=queue.pop()
+            print(s)
+            for i in self.graph[s]:
+                if not visited[i]:
+                    queue.insert(0,i)
+                    visited[i]=True            
 
 
 if __name__ == '__main__':
